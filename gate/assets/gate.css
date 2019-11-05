@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 2rem;
+    margin: 0;
+    background-color: #000;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    position: fixed
+}
+
+blockquote.bubble {
+    margin: 0 auto;
+    text-align: center;
+    height: 0;
+    box-sizing: content-box;
+    line-height: 1
+}
+
+blockquote.speech {
+    height: auto;
+    padding: 5%
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh
+}
+
+.item {
+    background-color: #ccc;
+    border-radius: 2%;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    max-width: 75%
+}
+
+.item i {
+    color: #696969;
+    font-size: 1.5rem
+}
+
+.item img {
+    align-self: center;
+    height: 75%;
+    margin-bottom: 10%;
+    border-radius: .3rem;
+    width: auto;
+}
+.item img[onclick]{
+  cursor: pointer;
+}
+.item img[onclick]:hover{
+      box-shadow: 0 0 5rem black;
+}
+
+
+.item input {
+    border: 2px dashed purple;
+    width: 50%;
+    font-size: 1.3rem;
+    text-align: center;
+    margin: auto 25% 5%;
+    background: #fff
+}

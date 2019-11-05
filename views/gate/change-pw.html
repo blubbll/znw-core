@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Change your password</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1.0001, minimum-scale=1.0001, maximum-scale=1.0001, user-scalable=no"
+    />
+    <link rel="stylesheet" type="text/css" href="/gate.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">
+        <blockquote class="speech bubble">
+          Please enter your new password below and <br />hit ENTER or click pino
+          to change your password.
+        </blockquote>
+        <form id="form" method="POST">
+          <input type="password" placeholder="new password" name="password" />
+        </form>
+        <img
+          src="https://znwcore.b-cdn.net/pino_neutral.jpg"
+          onclick="document.querySelector('#form').submit()"
+        />
+      </div>
+    </div>
+  </body>
+  {{script}}
+</html>
