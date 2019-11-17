@@ -106,7 +106,12 @@ _.app.all(["/*"], async (req, res, next) => {
     .pop()
     .split("/")
     .pop();
-  if (target) {
+  
+  if(target !== req._parsedUrl.path.split("/")[1]){
+    res.status(404).json({status:"nok", msg: 404, details: `Route '${req._parsedUrl.path}' is not registered.`});
+  }
+  else if (target) {
+    
     console.log(`Requested: ${target}`);
     (await m.getGames()).find(game => game.discrim === target)
       ? (() => {

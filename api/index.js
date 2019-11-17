@@ -23,3 +23,10 @@ const r = m.getRoute(__dirname);
   //SOFTWARE
   include(r + "/software/*");
 }
+
+{
+  $.set(
+    "vstrings",
+    _.fs.readFileSync(`${__dirname}/minerals.txt`, "utf8").split("\n")
+  );
+}

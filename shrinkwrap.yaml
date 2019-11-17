@@ -1,15 +1,16 @@
 dependencies:
   '@sendgrid/mail': 6.4.0
   body-parser: 1.19.0
+  bunnycdn-node: 1.1.1
   compression: 1.7.4
-  cryptr: 5.0.0
-  dotenv: 8.1.0
+  cryptr: 6.0.1
+  dotenv: 8.2.0
   download: 7.1.0
   email-deep-validator: 3.3.0
   express: 4.17.1
   ftp: 0.3.10
   ftploy: 0.0.4
-  glob: 7.1.5
+  glob: 7.1.6
   http-proxy-middleware: 0.20.0
   moment: 2.24.0
   mysql-easier: 2.1.0
@@ -18,8 +19,8 @@ dependencies:
   node-ftp-deploy: 1.0.2
   node-global-storage: 1.2.3
   owasp-password-strength-test: 1.3.0
-  pino: 5.13.4
-  pino-pretty: 3.2.2
+  pino: 5.13.6
+  pino-pretty: 3.4.0
   request: 2.88.0
   safe-memory-cache: 1.5.1
   sha256: 0.2.0
@@ -184,6 +185,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ReZxvNHIOv88FlT7rxcXIIC0fPt4KZqZbOlivyWtXLt8ESx84zd3kMC6iK5jVeS2qt+g7ftS7ye4fi06X5rtRQ==
+  /axios/0.18.1:
+    dependencies:
+      follow-redirects: 1.5.10
+      is-buffer: 2.0.4
+    dev: false
+    resolution:
+      integrity: sha512-0BfJq4NSfQXd+SkFdrvFbG7addhYSBA2mQwISr46pD6E5iqkWg02RAs8vyTT/j0RTnoYmeXauBuSv1qKwR179g==
   /balanced-match/1.0.0:
     dev: false
     resolution:
@@ -271,6 +279,17 @@ packages:
     dev: false
     resolution:
       integrity: sha512-zvj65TkFeIt3i6aj5bIvJDzjjQQGs4o/sNoezg1F1kYap9Nu2jcUdpwzRSJTHMMzG0H7bZkn4rNQpImhuxWX2A==
+  /bunnycdn-node/1.1.1:
+    dependencies:
+      axios: 0.18.1
+      class-transformer: 0.1.10
+      lodash: 4.17.15
+      reflect-metadata: 0.1.13
+    dev: false
+    engines:
+      node: '>=8.0.0'
+    resolution:
+      integrity: sha512-5ywWLNUxUqv/6O9YdostA19OCbLT1NRcY51DAgmb7WDV6FZ7QcG3iQRKX0uMl0f+cDSYVN6UJZ9MhgF4ynSW4g==
   /bytes/3.0.0:
     dev: false
     engines:
@@ -348,6 +367,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tUc7M9yXxCTl2Y3IfVXU2KKci/I=
+  /class-transformer/0.1.10:
+    dev: false
+    resolution:
+      integrity: sha512-QiNdUxEvTBiUtc0KiapGVHhgaqGQVEhOfL9UEBnb9xRfcwmDJT5ijIDwcwJUTwXaT/kGvZZB4JCGsiuR5adX6g==
   /cli-cursor/2.1.0:
     dependencies:
       restore-cursor: 2.0.0
@@ -475,10 +498,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
-  /cryptr/5.0.0:
+  /cryptr/6.0.1:
     dev: false
     resolution:
-      integrity: sha512-Mk7tYjFbhpK/XIDhNS08/B6nqRJuuD9Y0R2rctaTskVas2gq5a+SkNYq1Jr5lCztBNfuiLkFdGHaLu8PGtY5ZQ==
+      integrity: sha512-PD9twTbG18KfCeEkgEM6BrorTLMt+koQQ6/czeELvSFYeaE9nU9+u6cElZgul+Zbt3o5LGi6UWSTkmgiqK1lIA==
   /curry/1.2.0:
     dev: false
     resolution:
@@ -514,6 +537,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==
+  /debug/3.1.0:
+    dependencies:
+      ms: 2.0.0
+    dev: false
+    resolution:
+      integrity: sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
   /debug/3.2.6:
     dependencies:
       ms: 2.1.2
@@ -620,12 +649,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
-  /dotenv/8.1.0:
+  /dotenv/8.2.0:
     dev: false
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-GUE3gqcDCaMltj2++g6bRQ5rBJWtkWTmqmD0fo1RnnMuUqHNCt2oTPeDnS9n6fKYvlhn7AeBkb38lymBtWBQdA==
+      integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
   /download/7.1.0:
     dependencies:
       archive-type: 4.0.0
@@ -940,6 +969,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-4zPxDyhCyiN2wIAtSLI6gc82/EjqZc1onI4Mz/l0pWrAlsSfYH/2ZIcU+e3oA2wDwbzIWNKwa23F8rh6+DRWkw==
+  /follow-redirects/1.5.10:
+    dependencies:
+      debug: 3.1.0
+    dev: false
+    engines:
+      node: '>=4.0'
+    resolution:
+      integrity: sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
   /follow-redirects/1.9.0:
     dependencies:
       debug: 3.2.6
@@ -1071,7 +1108,7 @@ packages:
     dev: false
     resolution:
       integrity: sha512-hkLPepehmnKk41pUGm3sYxoFs/umurYfYJCerbXEyFIWcAzvpipAgVkBqqT9RBKMGjnq6kMuyYwha6csxbiM1A==
-  /glob/7.1.5:
+  /glob/7.1.6:
     dependencies:
       fs.realpath: 1.0.0
       inflight: 1.0.6
@@ -1081,7 +1118,7 @@ packages:
       path-is-absolute: 1.0.1
     dev: false
     resolution:
-      integrity: sha512-J9dlskqUXK1OeTOYBEn5s8aMukWMwWfs+rPTn/jn50Ux4MNXVhubL1wu/j2t+H4NVI+cXEcCaYellqaPVGXNqQ==
+      integrity: sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
   /got/8.3.2:
     dependencies:
       '@sindresorhus/is': 0.7.0
@@ -1284,6 +1321,12 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha512-M4Sjn6N/+O6/IXSJseKqHoFc+5FdGJ22sXqnjTpdZweHK64MzEPAyQZyEU3R/KRv2GLoa7nNtg/C2Ev6m7z+eA==
+  /is-buffer/2.0.4:
+    dev: false
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha512-Kq1rokWXOPXWuaMAqZiJW4XxsmD9zGx9q4aePabbn3qCRGedtH7Cm+zV8WETitMfu1wdh+Rvd6w5egwSngUX2A==
   /is-extglob/2.1.1:
     dev: false
     engines:
@@ -1379,6 +1422,12 @@ packages:
       node: '>= 0.6.0'
     resolution:
       integrity: sha1-o/Iiqarp+Wb10nx5ZRDigJF2Qhc=
+  /joycon/2.2.5:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-YqvUxoOcVPnCp0VU1/56f+iKSdvIRJYPznH22BdXV3xMk75SFXhWeJkZ8C9XxUWt1b5x2X1SxuFygW1U0FmkEQ==
   /jsbn/0.1.1:
     dev: false
     resolution:
@@ -1885,7 +1934,7 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
-  /pino-pretty/3.2.2:
+  /pino-pretty/3.4.0:
     dependencies:
       '@hapi/bourne': 1.3.2
       args: 5.0.1
@@ -1893,18 +1942,20 @@ packages:
       dateformat: 3.0.3
       fast-safe-stringify: 2.0.7
       jmespath: 0.15.0
+      joycon: 2.2.5
       pump: 3.0.0
       readable-stream: 3.4.0
       split2: 3.1.1
+      strip-json-comments: 3.0.1
     dev: false
     hasBin: true
     resolution:
-      integrity: sha512-2SP++Wbo4EsH5RpLhcsYHOR/8CMTIJWZpU0aPiVK0Wq8SrRMQ9oHQNffVK5ZyDFZMtSuTdFCVfLVNFmtFMDEeA==
+      integrity: sha512-0oEHicFdUCh2tFHQnTX7b9jph+S/UibLMuhBF0yFkt+7JGZGQejNkui27B9qPUofwmqKAf3FfLYvponPyNsQJw==
   /pino-std-serializers/2.4.2:
     dev: false
     resolution:
       integrity: sha512-WaL504dO8eGs+vrK+j4BuQQq6GLKeCCcHaMB2ItygzVURcL1CycwNEUHTD/lHFHs/NL5qAz2UKrjYWXKSf4aMQ==
-  /pino/5.13.4:
+  /pino/5.13.6:
     dependencies:
       fast-redact: 2.0.0
       fast-safe-stringify: 2.0.7
@@ -1915,7 +1966,7 @@ packages:
     dev: false
     hasBin: true
     resolution:
-      integrity: sha512-heeg8m8FZY8Nl3nuuD+msJUmhamqoGl7JXoTExh9YpGajzz6LYbVByUqrjbf4sCEMYFsqdcqnTJWiSY660DraQ==
+      integrity: sha512-cYhvK4lopLnW/OtU3uRqBNsPiBt0Cdv97LGJg4yPGbGajlOjWWaODwD66q3Ynqnj6bSNw8HSofYcEOKZqh4Gcg==
   /prepend-http/2.0.0:
     dev: false
     engines:
@@ -2034,6 +2085,10 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-jItXPLmrSR8jmTRmRWJXCnGJsfy85mB3Wd/uINMXA65yrnFo0cPClFIUWzo2najVNSl+mx7/4W8ttlLWJe99pQ==
+  /reflect-metadata/0.1.13:
+    dev: false
+    resolution:
+      integrity: sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
   /request/2.88.0:
     dependencies:
       aws-sign2: 0.7.0
@@ -2313,6 +2368,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-JOCxOeKLm2CAS73y/U4ZeZPTkE+gNVCzKt7Eox84Iej1LT/2pTWYpZKJuxwQpvX1LiZb1xokNR7RLfuBAa7T3g==
+  /strip-json-comments/3.0.1:
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-VTyMAUfdm047mwKl+u79WIdrZxtFtn+nBxHeb844XBQ9uMNTuTHdx2hc5RiAJYqwTj3wc/xe5HLSdJSkJ+WfZw==
   /strip-outer/1.0.1:
     dependencies:
       escape-string-regexp: 1.0.5
@@ -2565,15 +2626,16 @@ shrinkwrapVersion: 3
 specifiers:
   '@sendgrid/mail': ^6.4.0
   body-parser: ^1.19.0
+  bunnycdn-node: ^1.1.1
   compression: ^1.7.4
-  cryptr: ^5.0.0
-  dotenv: ^8.1.0
+  cryptr: ^6.0.0
+  dotenv: ^8.2.0
   download: ^7.1.0
   email-deep-validator: ^3.3.0
   express: ^4.16.4
   ftp: ^0.3.10
   ftploy: ^0.0.4
-  glob: ^7.1.5
+  glob: ^7.1.6
   http-proxy-middleware: ^0.20.0
   moment: ^2.24.0
   mysql-easier: ^2.1.0
@@ -2582,8 +2644,8 @@ specifiers:
   node-ftp-deploy: ^1.0.2
   node-global-storage: ^1.2.3
   owasp-password-strength-test: ^1.3.0
-  pino: ^5.13.4
-  pino-pretty: ^3.2.2
+  pino: ^5.13.5
+  pino-pretty: ^3.4.0
   request: ^2.88.0
   safe-memory-cache: ^1.5.1
   sha256: ^0.2.0

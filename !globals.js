@@ -14,9 +14,17 @@ const include = script => {
   delete require.cache[script];
   script.includes("//") || script.endsWith("/index.js")
     ? console.log(
-        `📜loaded server module group '${script.replace("//", "/").replace("/index.js", "").replace(".js", "").replace("_", "")}'❕`
+        `📜loaded server module group '${script
+          .replace("//", "/")
+          .replace("/index.js", "")
+          .replace(".js", "")
+          .replace("_", "")}'❕`
       )
-    : console.log(`📜loaded server module '${script.replace(".js", "").replace("_", "")}'❕`);
+    : console.log(
+        `📜loaded server module '${script
+          .replace(".js", "")
+          .replace("_", "")}'❕`
+      );
 };
 
 const execute = script => {
@@ -44,6 +52,7 @@ module.exports = {
       colorize: true
     }
   }),
+  Bunny: require("bunnycdn-node"),
   fs: require("fs"),
   moment: require("moment"),
   hash: require("sha256"),
@@ -112,8 +121,32 @@ const gamePool = $.set(
       conn.done();
     });
 
+//SoftwareDB
+const swPool = $.set(
+    "swPool",
+    _.mySqlEasier.createPool({
+      host: process.env.DB_SW_HOST,
+      user: process.env.DB_SW_USER,
+      password: process.env.DB_SW_PASS,
+      database: process.env.DB_SW_NAME
+    })
+  ),
+  getSoftware = () =>
+    new Promise(async (resolve, reject) => {
+      let dbgames;
+      const conn = await gamePool.getConnection();
+      conn.getAll(process.env.DB_SW_TABL).then(games => {
+        dbgames = games;
+        dbgames.sort(function(a, b) {
+          return a.name.length - b.name.length || a.localeCompare(b);
+        });
+        console.log("got games.");
+        return resolve(dbgames);
+      });
+      conn.done();
+    });
+
 //userFtpDB
-//GameDB
 const userftpPool = $.set(
     "userftpPool",
     _.mySqlEasier.createPool({

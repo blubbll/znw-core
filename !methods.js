@@ -14,10 +14,14 @@ const _ = require("./!globals.js");
   };
 
   const getRoute = dir => {
-    const delim = "api/";
+    const delim = "/api/";
     if (dir.includes(delim)) {
       return `${delim}${dir.split("/api/")[1]}`;
-    } else return delim;
+    } else return delim.slice(0, -1);
+  };
+
+  const getVstring = v => {
+    return $.get("vstrings")[v];
   };
 
   const sendGames = async () => {
@@ -35,6 +39,16 @@ const _ = require("./!globals.js");
     });
     return gameList;
   };
+
+  const getLink = (game, ident, gm) =>
+    new Promise(async (resolve, reject) => {
+      let _ident;
+      if (game && ident && gm) {
+      } else if (game && ident) {
+      } else if (game) {
+        _ident = game;
+      }
+    });
 
   //generate some funny emojis for linking haha
   const genLinkEmojis = () => {
@@ -295,6 +309,7 @@ const _ = require("./!globals.js");
   module.exports = {
     sendGames,
     getGames,
+    getVstring,
     genLinkEmojis,
     validateMail,
     sendResetMail,

@@ -8,6 +8,9 @@ const include = _.include;
 const r = m.getRoute(__dirname);
 /////////////////////////////////////////////////////////////////////////////////////////
 {
+  //info
+  include(r + "/info");
+  
   //versions
-  include(r + "/versions");
+  include(r + "/version");
 }
