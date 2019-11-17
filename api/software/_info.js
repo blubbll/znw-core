@@ -30,9 +30,9 @@ _.app.get(r + "/:sw", async (req, res) => {
 _.app.get(r + "/game/:discrim", async (req, res) => {
   let status, msg, details, data;
   const gameConn = await $.get("gamePool").getConnection();
-  const swId = await gameConn.query(
+  const swId = (await gameConn.query(
     `select software from ${process.env.DB_GAMES_TABL} where discrim = '${req.params.discrim}'`
-  );
+  ))[0].software;
   //sw exist
   if (swId) {
     const swConn = await $.get("swPool").getConnection();

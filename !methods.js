@@ -21,7 +21,7 @@ const _ = require("./!globals.js");
   };
 
   const getVstring = v => {
-    return $.get("vstrings")[v];
+    return $.get("vstrings")[v || 0];
   };
 
   const sendGames = async () => {

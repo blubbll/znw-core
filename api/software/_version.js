@@ -32,9 +32,9 @@ _.app.get(r + "/:sw/version", async (req, res) => {
 _.app.get(r + "/game/:discrim/version", async (req, res) => {
   let status, msg, details, data;
   const gameConn = await $.get("gamePool").getConnection();
-  const swId = await gameConn.query(
+  const swId = (await gameConn.query(
     `select software from ${process.env.DB_GAMES_TABL} where discrim = '${req.params.discrim}'`
-  );
+  ))[0].software;
   //sw exist
   if (swId) {
     const swConn = await $.get("swPool").getConnection();
@@ -44,7 +44,8 @@ _.app.get(r + "/game/:discrim/version", async (req, res) => {
         (msg = "sending sw data"),
         (data = m.getVstring(sw.version));
     } else {
-      (status = "nok"), (msg = "error at getting sw  details for sw#" + sw);
+      (status = "nok"),
+        (msg = `error at getting sw details for ${req.params.discrim}`);
     }
     swConn.done();
   } else {
